@@ -8,6 +8,7 @@ class JokeService{
   Future<String> getJokes() async {
     try {
       final response = await _dio.get('https://v2.jokeapi.dev/joke/Any');
+      print(response.data);
 
       if (response.statusCode == 200) {
         final data = response.data;

@@ -33,7 +33,8 @@ class _MyAppState extends State<MyApp> {
   // Function to handle refresh action
   Future<void> _onRefresh() async {
     _loadJokes(); // Reload jokes
-    await Future.delayed(const Duration(seconds: 0)); // Optional: Simulate loading delay
+    await Future.delayed(
+        const Duration(seconds: 0)); // Optional: Simulate loading delay
   }
 
   @override
@@ -62,9 +63,7 @@ class _MyAppState extends State<MyApp> {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
-                  child: CircularProgressIndicator(
-                    color: Colors.teal
-                  ),
+                  child: CircularProgressIndicator(color: Colors.teal),
                 );
               } else if (snapshot.hasError) {
                 return Center(
@@ -76,7 +75,6 @@ class _MyAppState extends State<MyApp> {
                   physics: const AlwaysScrollableScrollPhysics(),
                   child: Container(
                     margin: const EdgeInsets.all(16.0),
-
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8.0),
@@ -96,7 +94,6 @@ class _MyAppState extends State<MyApp> {
                         style: TextStyle(
                           color: Colors.teal,
                           fontSize: 18.0,
-
                         ),
                         textAlign: TextAlign.center,
                       ),

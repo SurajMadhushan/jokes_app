@@ -6,4 +6,8 @@ class JokeController{
   Future<String> getJokes() async {
     return await _jokeService.getJokes();
   }
+
+  Future<List<String>> getMultipleJokes() async {
+    return await _jokeService.getMultipleJokes();
+  }
 }
